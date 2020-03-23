@@ -7,17 +7,34 @@ var runes = parseInt(getCookie("runes"));
 var mana = parseInt(getCookie("mana"));
 var autoSpeed = parseInt(getCookie("autoSpeed"));
 var upgradeCost = parseInt(getCookie("upgradeCost"));
-var guildMates = parseInt(getCookie("guildMates"));;
+var guildMates = parseInt(getCookie("guildMates"));
+var sin1 = parseInt(getCookie("sin1"));
+var sin2 = parseInt(getCookie("sin2"));
+var sin3 = parseInt(getCookie("sin3"));
+var sin4 = parseInt(getCookie("sin4"));
+var sin5 = parseInt(getCookie("sin5"));
+var sin6 = parseInt(getCookie("sin6"));
+var sin7 = parseInt(getCookie("sin7"));
+var sin8 = parseInt(getCookie("sin8"));
 
 
 
 function save(){
 	
-setCookie("runes", runes, 30);
-setCookie("mana", mana, 30);
-setCookie("autoSpeed", autoSpeed, 30);
-setCookie("upgradeCost", upgradeCost, 30);
-setCookie("guildMates", guildMates, 30);
+	setCookie("runes", runes, 30);
+	setCookie("mana", mana, 30);
+	setCookie("autoSpeed", autoSpeed, 30);
+	setCookie("upgradeCost", upgradeCost, 30);
+	setCookie("guildMates", guildMates, 30);
+	setCookie("sin1", sin1, 30);
+	setCookie("sin2", sin2, 30);
+	setCookie("sin3", sin3, 30);
+	setCookie("sin4", sin4, 30);
+	setCookie("sin5", sin5, 30);
+	setCookie("sin6", sin6, 30);
+	setCookie("sin7", sin7, 30);
+	setCookie("sin8", sin8, 30);
+
 }
 
 function load(){
@@ -38,9 +55,14 @@ function newGame(){
 	setCookie("autoSpeed", 20000, 30);
 	setCookie("upgradeCost", 100, 30);
 	setCookie("guildMates", 1, 30);
-	
-	
-	
+	setCookie("sin1", 0, 30);
+	setCookie("sin2", 0, 30);
+	setCookie("sin3", 0, 30);
+	setCookie("sin4", 0, 30);
+	setCookie("sin5", 0, 30);
+	setCookie("sin6", 0, 30);
+	setCookie("sin7", 0, 30);
+	setCookie("sin8", 0, 30);					
 	
 }
  
@@ -143,6 +165,7 @@ function move() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				sin1 = sin1 + 1;
 				clearInterval(id);
 				i = 0;
 				move();
@@ -166,6 +189,7 @@ function move2() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				sin2 = sin2 + 1;
 				clearInterval(id);
 				q = 0;
 				move2();
@@ -189,6 +213,7 @@ function move3() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				sin3 = sin3 + 1;
 				clearInterval(id);
 				a = 0;
 				move3();
@@ -201,6 +226,131 @@ function move3() {
 	}
 	
 }
+
+var b = 0;
+function move4() {
+	if (b == 0) {
+		b = 1;
+		var elem = document.getElementById("AutoRage");
+		var width = 0;
+		var id = setInterval(frame, autoSpeed / 100);
+		function frame() {
+			if (width >= 100) {
+				farm();
+				sin4 = sin4 + 1;
+				clearInterval(id);
+				b = 0;
+				move4();
+			} else {
+				width++;
+				elem.style.width = width + "%";
+				elem.innerHTML = width + "%";
+			}
+		}
+	}
+	
+}
+
+var c = 0;
+function move5() {
+	if (c == 0) {
+		c = 1;
+		var elem = document.getElementById("AutoDenial");
+		var width = 0;
+		var id = setInterval(frame, autoSpeed / 100);
+		function frame() {
+			if (width >= 100) {
+				farm();
+				sin5 = sin5 + 1;
+				clearInterval(id);
+				c = 0;
+				move5();
+			} else {
+				width++;
+				elem.style.width = width + "%";
+				elem.innerHTML = width + "%";
+			}
+		}
+	}
+	
+}
+
+
+var d = 0;
+function move6() {
+	if (d == 0) {
+		d = 1;
+		var elem = document.getElementById("AutoHarming");
+		var width = 0;
+		var id = setInterval(frame, autoSpeed / 100);
+		function frame() {
+			if (width >= 100) {
+				farm();
+				sin6 = sin6 + 1;
+				clearInterval(id);
+				d = 0;
+				move6();
+			} else {
+				width++;
+				elem.style.width = width + "%";
+				elem.innerHTML = width + "%";
+			}
+		}
+	}
+	
+}
+
+var e = 0;
+function move7() {
+	if (e == 0) {
+		e = 1;
+		var elem = document.getElementById("AutoCorruption");
+		var width = 0;
+		var id = setInterval(frame, autoSpeed / 100);
+		function frame() {
+			if (width >= 100) {
+				farm();
+				sin7 = sin7 + 1;
+				clearInterval(id);
+				e = 0;
+				move7();
+			} else {
+				width++;
+				elem.style.width = width + "%";
+				elem.innerHTML = width + "%";
+			}
+		}
+	}
+	
+}
+
+
+
+var f = 0;
+function move8() {
+	if (f == 0) {
+		f = 1;
+		var elem = document.getElementById("AutoBetrayal");
+		var width = 0;
+		var id = setInterval(frame, autoSpeed / 100);
+		function frame() {
+			if (width >= 100) {
+				farm();
+				sin8 = sin8 + 1;
+				clearInterval(id);
+				f = 0;
+				move8();
+			} else {
+				width++;
+				elem.style.width = width + "%";
+				elem.innerHTML = width + "%";
+			}
+		}
+	}
+	
+}
+
+
 
 function setCookie(cname, cvalue, exdays) {
 	var d = new Date();
