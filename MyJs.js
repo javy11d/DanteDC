@@ -43,6 +43,14 @@ function load(){
 	autoSpeed = parseInt(getCookie("autoSpeed"));
 	upgradeCost = parseInt(getCookie("upgradeCost"));
 	guildMates = parseInt(getCookie("guildMates"));
+	sin1 = parseInt(getCookie("sin1"));
+    sin2 = parseInt(getCookie("sin2"));
+    sin3 = parseInt(getCookie("sin3"));
+    sin4 = parseInt(getCookie("sin4"));
+	sin5 = parseInt(getCookie("sin5"));
+	sin6 = parseInt(getCookie("sin6"));
+	sin7 = parseInt(getCookie("sin7"));
+	sin8 = parseInt(getCookie("sin8"));
 	updateDisplay();
 	
 }
@@ -426,30 +434,7 @@ function die(){
 	window.open(pageName);
 	
 	
-/*	if(randomSin.equals("Lust")){
-		window.open("resultLust.html");
-	}
-	else if(randomSin.equals("Gluttony")){
-		window.open("resultGluttony.html");
-	}
-	else if(randomSin.equals("Greed")){
-		window.open("resultGreed.html");
-	}
-	else if(randomSin.equals("Wrath")){
-		window.open("resultWrath.html");
-	}
-	else if(randomSin.equals("Heresy")){
-		window.open("resultHeresy.html");
-	}
-	else if(randomSin.equals("Violence")){
-		window.open("resultViolence.html");
-	}
-	else if(randomSin.equals("Fraud")){
-		window.open("resultFraud.html");
-	}
-	else if(randomSin.equals("Treachery")){
-		window.open("resultTreachery.html");
-	}  */
+
 	
 
 	
