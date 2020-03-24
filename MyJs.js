@@ -88,7 +88,20 @@ function sell(){
 	
 	mana = mana + 1;
 	updateDisplay();
+
+}
+
+function sell2(){
 	
+	mana = mana + 2;
+	updateDisplay();
+
+}
+
+function sell3(){
+	
+	mana = mana + 5;
+	updateDisplay();
 
 }
 
@@ -372,6 +385,83 @@ function getCookie(cname) {
 		}
 	}
 	return "";
+}
+
+
+
+function die(){
+	
+	
+  var txt = "Dante Alighieri's Divina Commedia";
+  if (confirm("Are you sure you're ready to be judged? This will end the game!")) {
+    	var totalSins = runes;
+	var variedSins = [];
+	for(var j = 0; j < sin1; j++){
+		variedSins.push("Lust");		
+	}
+	for(var j = 0; j < sin2; j++){
+		variedSins.push("Gluttony");		
+	}
+	for(var j = 0; j < sin3; j++){
+		variedSins.push("Greed");		
+	}
+	for(var j = 0; j < sin4; j++){
+		variedSins.push("Wrath");		
+	}
+	for(var j = 0; j < sin5; j++){
+		variedSins.push("Heresy");		
+	}
+	for(var j = 0; j < sin6; j++){
+		variedSins.push("Violence");		
+	}
+	for(var j = 0; j < sin7; j++){
+		variedSins.push("Fraud");		
+	}
+	for(var j = 0; j < sin8; j++){
+		variedSins.push("Treachery");		
+	}
+	
+	var randomSin = variedSins[Math.floor(Math.random() * totalSins)];
+	var pageName = "result" + randomSin + ".html";
+	window.open(pageName);
+	
+	
+/*	if(randomSin.equals("Lust")){
+		window.open("resultLust.html");
+	}
+	else if(randomSin.equals("Gluttony")){
+		window.open("resultGluttony.html");
+	}
+	else if(randomSin.equals("Greed")){
+		window.open("resultGreed.html");
+	}
+	else if(randomSin.equals("Wrath")){
+		window.open("resultWrath.html");
+	}
+	else if(randomSin.equals("Heresy")){
+		window.open("resultHeresy.html");
+	}
+	else if(randomSin.equals("Violence")){
+		window.open("resultViolence.html");
+	}
+	else if(randomSin.equals("Fraud")){
+		window.open("resultFraud.html");
+	}
+	else if(randomSin.equals("Treachery")){
+		window.open("resultTreachery.html");
+	}  */
+	
+
+	
+  } else {
+    
+  }
+  document.getElementById("report").innerHTML = txt;
+
+	
+	
+	
+	
 }
 
 

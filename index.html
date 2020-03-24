@@ -158,7 +158,7 @@ window.onload = function() {
 
 
 
-	<h1>Dante Alighieri's Divina Commedia</h1>
+	<h1 id="report">Dante Alighieri's Divina Commedia</h1>
 	
 	<h2>Welcome to Dante's Divine Comedy! The rules are simple: live life however you want, then die! Once you have met your fate, Dante himself will decide where to place you, the depths of Inferno, the ridges of Purgatorio, or the graces of Paradiso!</h2>
 
@@ -169,6 +169,8 @@ window.onload = function() {
 	<h2>Actions: Live Your Life!</h2>
 	<button type="button" class="button1" onclick="farm()">Generic Sin</button>
 	<button type="button" class="button3" onclick="sell()">Generic Repentence</button>
+	<button type="button" class="button3" onclick="sell2()">Pray</button>
+	<button type="button" class="button3" onclick="sell3()">Confess Your Sins</button>
 	<h2>Upgrades</h2>
 	<button id = "GuildMateButton"type="button" class="button1" onclick="purchaseGuildMate()">Buy GuildMate</button>
 	<button id="AutoUpgradeButton" type="button" class="button1" onclick="upgradeAuto()">Upgrade Auto Farming Speed <script>"getAutoUpgradeCost();"</script></button>
@@ -221,8 +223,8 @@ window.onload = function() {
 	</div>
 	<br>
 	
-	<button type="button" class="button2" onclick="move6()">Start Auto Harming (Violence)</button>
-	Auto Harming Progress:
+	<button type="button" class="button2" onclick="move6()">Start Auto Abusing (Violence)</button>
+	Auto Abusing Progress:
 	<br>
 	<div id="myProgress">
 		<div id="AutoHarming">0%</div>
@@ -264,7 +266,7 @@ window.onload = function() {
 	<button type="button" class="button1" onclick="newGame()">Restart Game</button>
 	<br><br><br><br>
 	<h2>END OF THE LINE</h2>
-	<button type="button" class="button1" onclick="newGame()">DIE</button>
+	<button type="button" class="button1" onclick="die()">DIE</button>
 	
 
 	<script src="MyJs.js"></script>
