@@ -430,7 +430,7 @@ function die(){
 	load();
   var txt = "Dante Alighieri's Divina Commedia";
   if (confirm("Are you sure you're ready to be judged? This will end the game!")) {
-    	var totalSins = runes;
+    	
 	var variedSins = [];
 	for(var j = 0; j < sin1; j++){
 		variedSins.push("Lust");		
@@ -457,7 +457,7 @@ function die(){
 		variedSins.push("Treachery");		
 	}
 	
-	var randomSin = variedSins[Math.floor(Math.random() * totalSins)];
+	var randomSin = variedSins[getRndInteger(0,runes)];
 	var pageName = "result" + randomSin + ".html";
 	window.open(pageName);
 	
@@ -475,6 +475,10 @@ function die(){
 	
 	
 	
+}
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 
