@@ -55,6 +55,18 @@ function load(){
 	
 }
 
+function showStats(){
+	document.getElementById("data1").innerHTML = "Lustful Deeds Committed: " + sin1;
+	document.getElementById("data2").innerHTML = "Gluttonous Deeds Committed: " + sin2;
+	document.getElementById("data3").innerHTML = "Greedy Deeds Committed: " + sin3;
+	document.getElementById("data4").innerHTML = "Wrathful Deeds Committed: " + sin4;
+	document.getElementById("data5").innerHTML = "Heretical Deeds Committed: " + sin5;
+	document.getElementById("data6").innerHTML = "Violent Deeds Committed: " + sin6;
+	document.getElementById("data7").innerHTML = "Fraudulant Deeds Committed: " + sin7;
+	document.getElementById("data8").innerHTML = "Treacherous Deeds Committed: " + sin8;
+	document.getElementById("data9").innerHTML = "Christian Deeds Committed: " + mana;
+	document.getElementById("data10").innerHTML = "Balanced Score: " + (mana - runes);
+}
 
 function newGame(){
 
@@ -399,7 +411,8 @@ function getCookie(cname) {
 
 function die(){
 	
-	
+	save();
+	load();
   var txt = "Dante Alighieri's Divina Commedia";
   if (confirm("Are you sure you're ready to be judged? This will end the game!")) {
     	var totalSins = runes;
