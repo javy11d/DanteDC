@@ -8,6 +8,7 @@ var mana = parseInt(getCookie("mana"));
 var autoSpeed = parseInt(getCookie("autoSpeed"));
 var upgradeCost = parseInt(getCookie("upgradeCost"));
 var guildMates = parseInt(getCookie("guildMates"));
+var holyPower = parseInt(getCookie("holyPower"));
 var sin1 = parseInt(getCookie("sin1"));
 var sin2 = parseInt(getCookie("sin2"));
 var sin3 = parseInt(getCookie("sin3"));
@@ -34,6 +35,8 @@ function save(){
 	setCookie("sin6", sin6, 30);
 	setCookie("sin7", sin7, 30);
 	setCookie("sin8", sin8, 30);
+	setCookie("holyPower", holyPower, 30);
+	
 
 }
 
@@ -51,6 +54,7 @@ function load(){
 	sin6 = parseInt(getCookie("sin6"));
 	sin7 = parseInt(getCookie("sin7"));
 	sin8 = parseInt(getCookie("sin8"));
+	holyPower = parseInt(getCookie("holyPower"));
 	updateDisplay();
 	
 }
@@ -82,7 +86,8 @@ function newGame(){
 	setCookie("sin5", 0, 30);
 	setCookie("sin6", 0, 30);
 	setCookie("sin7", 0, 30);
-	setCookie("sin8", 0, 30);					
+	setCookie("sin8", 0, 30);
+	setCookie("holyPower", 1, 30);					
 	
 }
  
@@ -90,7 +95,7 @@ function newGame(){
 
 function farm(){
 	
-	runes = runes + 1;
+	runes = runes + guildMates;
 	updateDisplay();
 
 }
@@ -104,23 +109,31 @@ function purchaseGuildMate(){
 	}
 }
 
+function upgradeHolyPower(){
+	if(mana >= holyPower * 200){
+		mana = mana - holyPower * 200;
+		holyPower = holyPower + 1;
+	updateDisplay();
+	}
+}
+
 function sell(){
 	
-	mana = mana + 1;
+	mana = mana + (1 * holyPower);
 	updateDisplay();
 
 }
 
 function sell2(){
 	
-	mana = mana + 2;
+	mana = mana + (2 * holyPower);
 	updateDisplay();
 
 }
 
 function sell3(){
 	
-	mana = mana + 5;
+	mana = mana + (5 * holyPower);
 	updateDisplay();
 
 }
@@ -170,10 +183,12 @@ function updateDisplay(){
 	document.getElementById("demo").innerHTML = "Current Sin Count: " + runes;
 	document.getElementById("mana").innerHTML = "Current Christian Deeds Count: " + mana;
 	document.getElementById("difference").innerHTML = "Balanced Score/Total: " + (mana - runes);
-	document.getElementById("AutoUpgradeButton").innerHTML = "Upgrade Auto Farming Speed (" + upgradeCost + ")";
-	document.getElementById("GuildMateButton").innerHTML = "Buy GuildMate (" + (guildMates * 200) + ")";
-	document.getElementById("speedStats").innerHTML = "AutoFarm Speed: " + (autoSpeed / 1000);
-	document.getElementById("guildMates").innerHTML = "Guild Mates: " + guildMates;
+	document.getElementById("AutoUpgradeButton").innerHTML = "Upgrade Sin Speed (" + upgradeCost + ")";
+	document.getElementById("GuildMateButton").innerHTML = "Upgrade Sin Severity (" + (guildMates * 200) + ")";
+	document.getElementById("HolyPowerButton").innerHTML = "Upgrade HolyPower (" + (holyPower * 200) + ")";
+	document.getElementById("speedStats").innerHTML = "Auto Sin Speed: " + (autoSpeed / 1000);
+	document.getElementById("guildMates").innerHTML = "Sin Severity: " + guildMates;
+	
 		
 	
 	
