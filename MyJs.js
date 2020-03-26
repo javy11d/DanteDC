@@ -213,6 +213,7 @@ function move() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Lust");
 				sin1 = sin1 + 1;
 				clearInterval(id);
 				i = 0;
@@ -237,6 +238,7 @@ function move2() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Gluttony");
 				sin2 = sin2 + 1;
 				clearInterval(id);
 				q = 0;
@@ -261,6 +263,7 @@ function move3() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Greed");
 				sin3 = sin3 + 1;
 				clearInterval(id);
 				a = 0;
@@ -285,6 +288,7 @@ function move4() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Wrath");
 				sin4 = sin4 + 1;
 				clearInterval(id);
 				b = 0;
@@ -309,6 +313,7 @@ function move5() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Heresy");
 				sin5 = sin5 + 1;
 				clearInterval(id);
 				c = 0;
@@ -334,6 +339,7 @@ function move6() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Violence");
 				sin6 = sin6 + 1;
 				clearInterval(id);
 				d = 0;
@@ -358,6 +364,7 @@ function move7() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Fraud");
 				sin7 = sin7 + 1;
 				clearInterval(id);
 				e = 0;
@@ -384,6 +391,7 @@ function move8() {
 		function frame() {
 			if (width >= 100) {
 				farm();
+				variedSins.push("Treachery");
 				sin8 = sin8 + 1;
 				clearInterval(id);
 				f = 0;
@@ -422,7 +430,7 @@ function getCookie(cname) {
 	return "";
 }
 
-
+var variedSins = [];
 
 function die(){
 	
@@ -431,33 +439,8 @@ function die(){
   var txt = "Dante Alighieri's Divina Commedia";
   if (confirm("Are you sure you're ready to be judged? This will end the game!")) {
     	
-	var variedSins = [];
-	for(var j = 0; j < sin1; j++){
-		variedSins.push("Lust");		
-	}
-	for(var j = 0; j < sin2; j++){
-		variedSins.push("Gluttony");		
-	}
-	for(var j = 0; j < sin3; j++){
-		variedSins.push("Greed");		
-	}
-	for(var j = 0; j < sin4; j++){
-		variedSins.push("Wrath");		
-	}
-	for(var j = 0; j < sin5; j++){
-		variedSins.push("Heresy");		
-	}
-	for(var j = 0; j < sin6; j++){
-		variedSins.push("Violence");		
-	}
-	for(var j = 0; j < sin7; j++){
-		variedSins.push("Fraud");		
-	}
-	for(var j = 0; j < sin8; j++){
-		variedSins.push("Treachery");		
-	}
-	
-	var randomSin = variedSins[getRndInteger(0,runes)];
+	var totalSins = variedSins.length;
+	randomSin = variedSins[Math.floor(Math.random() * (totalSins - 3)) + 1];
 	var pageName = "result" + randomSin + ".html";
 	window.open(pageName);
 	
@@ -476,11 +459,6 @@ function die(){
 	
 	
 }
-
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
 
 
 
